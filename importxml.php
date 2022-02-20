@@ -27,7 +27,6 @@ Loader::includeModule('iblock');
 CModule::IncludeModule('catalog');
 
 EventManager::getInstance()->addEventHandler(
-<<<<<<< HEAD
 	'importxml',
 	'CustomMorizoTestTaskEvent', 
 	'ModifyCustomMorizoTestTaskEvent'
@@ -35,29 +34,14 @@ EventManager::getInstance()->addEventHandler(
 
 function ModifyCustomMorizoTestTaskEvent(Event $event){
 	Debug::writeToFile('Количество успешно записанных в ИБ сущностей: ' . $event->getSender()['COUNT']);
-=======
-	"importxml",
-	"CustomMorizoTestTaskEvent", 
-	"ModifyCustomMorizoTestTaskEvent"
-);
-
-function ModifyCustomMorizoTestTaskEvent(Event $event){
-	Debug::writeToFile('Количество успешно записанных в ИБ сущностей: ' . $event->getSender()["COUNT"]);
->>>>>>> 3694629 (zadanie2)
 }
 
 function addProduct($id, $name, $desc, &$count){
 	$name = $id.'_'.$name;
 	Elements\ElementFortestTable::add([
-<<<<<<< HEAD
 		'ACTIVE' => 'Y',
 		'NAME' => $name,
 		'DETAIL_TEXT' => $desc
-=======
-		"ACTIVE" => "Y",
-		"NAME" => $name,
-		"DETAIL_TEXT" => $desc
->>>>>>> 3694629 (zadanie2)
 	]);
 	$count++;
 }
@@ -81,10 +65,5 @@ if ($node = $xml->SelectNodes('/root')){
 	}
 }
 
-<<<<<<< HEAD
 $event = new Event('importxml', 'CustomMorizoTestTaskEvent');
 $event->send(['COUNT' => $count]);
-=======
-$event = new Event("importxml", "CustomMorizoTestTaskEvent");
-$event->send(["COUNT" => $count]);
->>>>>>> 3694629 (zadanie2)
